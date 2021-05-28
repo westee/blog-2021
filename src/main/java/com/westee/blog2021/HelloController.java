@@ -1,8 +1,7 @@
 package com.westee.blog2021;
 
-import com.westee.blog2021.Service.OrderService;
-import com.westee.blog2021.Service.User;
-import com.westee.blog2021.Service.UserService;
+import com.westee.blog2021.service.User;
+import com.westee.blog2021.service.UserService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

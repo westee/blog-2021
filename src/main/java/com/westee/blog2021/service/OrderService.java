@@ -1,4 +1,4 @@
-package com.westee.blog2021.Service;
+package com.westee.blog2021.service;
 
 import javax.inject.Inject;
 

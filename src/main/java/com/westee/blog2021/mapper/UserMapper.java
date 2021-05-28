@@ -1,6 +1,6 @@
 package com.westee.blog2021.mapper;
 
-import com.westee.blog2021.Service.User;
+import com.westee.blog2021.service.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

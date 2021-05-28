@@ -1,4 +1,4 @@
-package com.westee.blog2021.Service;
+package com.westee.blog2021.service;
 
 public class User {
     private int id;

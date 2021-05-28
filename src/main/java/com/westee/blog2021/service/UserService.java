@@ -1,4 +1,4 @@
-package com.westee.blog2021.Service;
+package com.westee.blog2021.service;
 
 import com.westee.blog2021.mapper.UserMapper;
 
