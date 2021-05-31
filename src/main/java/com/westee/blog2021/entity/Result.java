@@ -1,8 +1,5 @@
 package com.westee.blog2021.entity;
 
-import com.westee.blog2021.controller.AuthController;
-import com.westee.blog2021.service.User;
-
 public class Result{
     private Status status;
     private String msg;
