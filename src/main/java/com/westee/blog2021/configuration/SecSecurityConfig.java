@@ -24,16 +24,6 @@ public class SecSecurityConfig extends WebSecurityConfigurerAdapter {
     @Inject
     private UserService userService;
 
-//    @Override
-//    protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
-//        auth.inMemoryAuthentication()
-//                .withUser("user1").password(bCryptPasswordEncoder().encode("user1Pass")).roles("USER")
-//                .and()
-//                .withUser("user2").password(bCryptPasswordEncoder().encode("user2Pass")).roles("USER")
-//                .and()
-//                .withUser("admin").password(bCryptPasswordEncoder().encode("adminPass")).roles("ADMIN");
-//    }
-
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
         http.csrf().disable()
@@ -41,7 +31,8 @@ public class SecSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/anonymous*", "/auth").anonymous()
                 .antMatchers("/auth/**").permitAll()
-                .anyRequest().authenticated();
+                .anyRequest().authenticated()
+                .and().rememberMe();
         // http builder configurations for authorize requests and form login (see below)
     }
 

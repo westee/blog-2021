@@ -35,6 +35,7 @@ public class AuthController {
 
     @GetMapping("/")
     public Result auth() {
+        SecurityContextHolder.getContext().getAuthentication().getName();
         return Result.SuccessResult("已登录", null);
     }
 
@@ -70,6 +71,18 @@ public class AuthController {
             return Result.SuccessResult("登录成功", null);
         } catch (BadCredentialsException e) {
             return Result.FailResult("用户名或密码不正确", null);
+        }
+    }
+
+    @PostMapping("/logout")
+    public Result logout(UsernameAndPassword usernameAndPassword) {
+        String name = SecurityContextHolder.getContext().getAuthentication().getName();
+
+        if(name == null) {
+            return Result.FailResult("用户未登录", null);
+        } else {
+            SecurityContextHolder.clearContext();
+            return Result.SuccessResult("退出成功", null);
         }
     }
 
