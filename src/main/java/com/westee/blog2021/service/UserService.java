@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
 import java.util.Collections;
-import java.util.Objects;
 
 @Service
 public class UserService implements UserDetailsService {
@@ -26,6 +25,10 @@ public class UserService implements UserDetailsService {
 
     public User getUserById(int id) {
         return userMapper.findUserById(id);
+    }
+
+    public User getUserByUsername(String username) {
+        return userMapper.getUserByUsername(username);
     }
 
     public void createUser (String username, String password) {

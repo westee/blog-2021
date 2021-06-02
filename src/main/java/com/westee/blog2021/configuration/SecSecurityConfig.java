@@ -29,9 +29,9 @@ public class SecSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/anonymous*", "/auth").anonymous()
-                .antMatchers("/auth/**").permitAll()
-                .anyRequest().authenticated()
+//                .antMatchers("/anonymous*", "/auth").anonymous()
+                .antMatchers("/auth/**", "/index.html").permitAll()
+//                .anyRequest().authenticated()
                 .and().rememberMe();
         // http builder configurations for authorize requests and form login (see below)
     }

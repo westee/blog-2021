@@ -1,30 +1,18 @@
 package com.westee.blog2021.entity;
 
-public class Result{
-    private Status status;
-    private String msg;
-    private User data;
+public abstract class Result<T> {
+    String msg;
+    String status;
+    T data;
 
-    public Result(Status status, String msg, User data) {
-        this.status = status;
+    protected Result(String status, String msg, boolean isLogin) {
+        this(msg, status, null);
+    }
+
+    protected Result(String msg, String status, T data) {
         this.msg = msg;
-        this.data = data;
-    }
-
-    public static Result SuccessResult(String msg, User user){
-        return new Result(Status.OK, msg, user);
-    }
-
-    public static Result FailResult(String msg, User user){
-        return new Result(Status.FAIL, msg, user);
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
         this.status = status;
+        this.data = data;
     }
 
     public String getMsg() {
@@ -35,11 +23,19 @@ public class Result{
         this.msg = msg;
     }
 
-    public User getData() {
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Object getData() {
         return data;
     }
 
-    public void setData(User data) {
+    public void setData(T data) {
         this.data = data;
     }
 }
