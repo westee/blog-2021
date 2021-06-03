@@ -35,10 +35,6 @@ public class UserService implements UserDetailsService {
         userMapper.createUser(username, encoder.encode(password));
     }
 
-    public User checkUsernameExist(String username) {
-        return userMapper.getUserByUsername(username);
-    }
-
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         User user = userMapper.getUserByUsername(s);

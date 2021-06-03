@@ -10,7 +10,4 @@ public class OrderService {
         this.userService = userService;
     }
 
-    void placeOrder(int userId) {
-        userService.getUserById(userId);
-    }
 }
