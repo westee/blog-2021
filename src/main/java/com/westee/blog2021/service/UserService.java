@@ -23,10 +23,6 @@ public class UserService implements UserDetailsService {
         this.encoder = encoder;
     }
 
-    public User getUserById(int id) {
-        return userMapper.findUserById(id);
-    }
-
     public User getUserByUsername(String username) {
         return userMapper.getUserByUsername(username);
     }
