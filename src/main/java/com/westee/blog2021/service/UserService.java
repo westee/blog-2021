@@ -42,4 +42,8 @@ public class UserService implements UserDetailsService {
                 user.getEncryptedPassword(),
                 Collections.emptyList());
     }
+
+    public User getUserByUserId(Integer userId) {
+        return userMapper.findUserById(userId);
+    }
 }
